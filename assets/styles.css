@@ -1,0 +1,99 @@
+#movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 25%) 1fr;
+    /* 25% pour l'image et le reste pour le texte */
+    gap: 10px;
+}
+
+.movie-grid img {
+    width: 100%;
+    /* pour que l'image prenne tout l'espace disponible */
+    height: auto;
+    object-fit: cover;
+    /* pour garder l'aspect ratio */
+}
+
+.movie-grid div:last-child {
+    padding: 10px;
+}
+
+.movie-grid h2,
+.movie-grid p,
+.movie-grid span {
+    margin: 0 0 10px;
+    /* Espacement entre le titre, la description et la note */
+}
+
+.movie-grid span {
+    font-weight: bold;
+}
+
+h1 {
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+/* Boutton détails */
+
+.detail-button {
+    padding: 10px 15px;
+    /* Ajoute de l'espace autour du texte */
+    margin-top: 10px;
+    /* Ajoute de l'espace au-dessus du bouton */
+    background-color: #007bff;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border: none;
+    /* Supprime la bordure */
+    border-radius: 5px;
+    /* Arrondit les coins */
+    cursor: pointer;
+    /* Change le curseur en main quand vous survolez */
+    text-align: center;
+    /* Centre le texte */
+    display: inline-block;
+    /* Permet au bouton de ne prendre que l'espace nécessaire */
+    font-size: 1em;
+    /* Taille de la police */
+}
+
+.detail-button:hover {
+    background-color: #0056b3;
+    /* Couleur de fond au survol */
+}
+
+#movie-details {
+    display: none;
+    position: fixed;
+    /* Fixe la modal au-dessus du contenu */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* S'assurer qu'elle est au-dessus des autres éléments */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
